@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>文字逐行滚动__插件</title>		
+		<script src="js/jquery.min.js"></script>
+		<script src="js/TextScroll.js"></script>
+		<style>
+			body{font-family: "microsoft yahei"; font-size: 13px; color: #333;}
+			.wrap{  width: 1200px; margin: 30px auto;}
+			ul,li{ margin: 0; padding: 0; list-style: none;}
+			.list{ height: 40px; overflow: hidden; border: 2px #ddd solid; padding: 0 10px; width: 300px; margin-bottom: 30px; position: relative;}
+			.list ul{ position: absolute;}
+			.list li{ height: 40px; line-height: 40px;}
+			.list i{ position: absolute; right: 10px; z-index: 2; cursor: pointer;}
+			.list i:before{ content: ''; display: block;  height: 0; width: 0; border: 5px solid transparent;}
+			.list i.up{ top: 5px;}
+			.list i.down{ bottom: 5px;}
+			.list i.up:before{ border-bottom-color: #ccc;}
+			.list i.up:hover:before{ border-bottom-color: #666; }
+			.list i.down:before{ border-top-color: #ccc;}
+			.list i.down:hover:before{ border-top-color: #666; }
+		</style>
+		<script>
+			$(function(){
+				//文字逐行滚动-默认向上滚动
+				TextScroll('.list1','up',40,2);
+				//文字逐行滚动
+				TextScroll('.list2','down',40,2);
+			});
+		</script>
+	</head>
+	<body>
+		<div class="wrap">
+			<div class="list list1">
+				<i class="up"></i>
+				<i class="down"></i>
+				<ul>
+					<li>这是一个标题一</li>
+					<li>这是一个标题二</li>
+					<li>这是一个标题三</li>
+					<li>这是一个标题四</li>
+					<li>这是一个标题五</li>
+					<li>这是一个标题六</li>
+				</ul>
+			</div>
+			<div class="list list2">
+				<i class="up"></i>
+				<i class="down"></i>
+				<ul>
+					<li>这是一个标题一</li>
+					<li>这是一个标题二</li>
+					<li>这是一个标题三</li>
+					<li>这是一个标题四</li>
+					<li>这是一个标题五</li>
+					<li>这是一个标题六</li>
+				</ul>
+			</div>
+		</div>
+		<!--
+        	作者：32237384@qq.com
+       -->
+	</body>
+</html>
